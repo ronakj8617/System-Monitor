@@ -33,5 +33,5 @@ void MonitorUI::refresh() {
     // Example static row
     mvprintw(7, 2, "1234  ronak     12.3    1.4    00:01:23 my_process");
 
-    refresh();
+    ::refresh(); // ✅ FIXED: call the ncurses refresh, not recursion
 }
