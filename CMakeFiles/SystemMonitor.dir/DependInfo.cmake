@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/ronak/Programming/CLion Projects/System-Monitor/src/MonitorUI.cpp" "CMakeFiles/SystemMonitor.dir/src/MonitorUI.cpp.o" "gcc" "CMakeFiles/SystemMonitor.dir/src/MonitorUI.cpp.o.d"
+  "/Users/ronak/Programming/CLion Projects/System-Monitor/src/ProcessParser.cpp" "CMakeFiles/SystemMonitor.dir/src/ProcessParser.cpp.o" "gcc" "CMakeFiles/SystemMonitor.dir/src/ProcessParser.cpp.o.d"
   "/Users/ronak/Programming/CLion Projects/System-Monitor/src/main.cpp" "CMakeFiles/SystemMonitor.dir/src/main.cpp.o" "gcc" "CMakeFiles/SystemMonitor.dir/src/main.cpp.o.d"
   )
 

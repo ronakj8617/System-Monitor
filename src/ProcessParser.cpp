@@ -11,7 +11,7 @@
 #include <pwd.h>
 #include <vector>
 #include <string>
-
+#include<algorithm>
 namespace fs = std::filesystem;
 
 std::string getUsername(uid_t uid) {
@@ -22,7 +22,7 @@ std::string getUsername(uid_t uid) {
 std::vector<ProcessInfo> getProcessList() {
     std::vector<ProcessInfo> processes;
 
-    for (const auto &entry : fs::directory_iterator("/proc")) {
+    for (const auto &entry: fs::directory_iterator("/proc")) {
         std::string pidStr = entry.path().filename();
         if (!std::all_of(pidStr.begin(), pidStr.end(), ::isdigit)) continue;
 
@@ -52,7 +52,7 @@ std::vector<ProcessInfo> getProcessList() {
         p.user = getUsername(uid);
         p.cpuUsage = 0.0f; // Optional: fill in using /proc/[pid]/stat
         p.memUsage = 0.0f; // Optional: fill in using /proc/[pid]/statm
-        p.time = "00:00";  // Optional: parse time from stat
+        p.time = "00:00"; // Optional: parse time from stat
         p.command = command;
 
         processes.push_back(p);

@@ -153,6 +153,30 @@ src/MonitorUI.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SystemMonitor.dir/build.make CMakeFiles/SystemMonitor.dir/src/MonitorUI.cpp.s
 .PHONY : src/MonitorUI.cpp.s
 
+src/ProcessParser.o: src/ProcessParser.cpp.o
+.PHONY : src/ProcessParser.o
+
+# target to build an object file
+src/ProcessParser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SystemMonitor.dir/build.make CMakeFiles/SystemMonitor.dir/src/ProcessParser.cpp.o
+.PHONY : src/ProcessParser.cpp.o
+
+src/ProcessParser.i: src/ProcessParser.cpp.i
+.PHONY : src/ProcessParser.i
+
+# target to preprocess a source file
+src/ProcessParser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SystemMonitor.dir/build.make CMakeFiles/SystemMonitor.dir/src/ProcessParser.cpp.i
+.PHONY : src/ProcessParser.cpp.i
+
+src/ProcessParser.s: src/ProcessParser.cpp.s
+.PHONY : src/ProcessParser.s
+
+# target to generate assembly for a file
+src/ProcessParser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SystemMonitor.dir/build.make CMakeFiles/SystemMonitor.dir/src/ProcessParser.cpp.s
+.PHONY : src/ProcessParser.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -189,6 +213,9 @@ help:
 	@echo "... src/MonitorUI.o"
 	@echo "... src/MonitorUI.i"
 	@echo "... src/MonitorUI.s"
+	@echo "... src/ProcessParser.o"
+	@echo "... src/ProcessParser.i"
+	@echo "... src/ProcessParser.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

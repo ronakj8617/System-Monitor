@@ -11,6 +11,7 @@
 #include <sstream>
 #include <unistd.h>
 #include <pwd.h>
+#include<algorithm>
 
 namespace fs = std::filesystem;
 
