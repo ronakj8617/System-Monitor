@@ -11,4 +11,6 @@ add_executable(SystemMonitor ${SOURCES}
         src/CPUMonitor.cpp
         include/CPUMonitor.h
         src/MemoryMonitor.cpp
-        include/MemoryMonitor.h)
+        include/MemoryMonitor.h
+        src/MonitorUI.cpp
+        include/MonitorUI.h)
