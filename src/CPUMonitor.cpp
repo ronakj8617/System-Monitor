@@ -6,6 +6,7 @@
 #include <fstream>
 #include <sstream>
 #include <string>
+#include <thread>
 
 float CPUMonitor::getCPUUsage() {
     std::ifstream file("/proc/stat");
@@ -20,13 +21,20 @@ float CPUMonitor::getCPUUsage() {
     unsigned long long idleTime = idle + iowait;
     unsigned long long totalTime = user + nice + system + idle + iowait + irq + softirq + steal;
 
-    float usage = 0.0f;
-    if (lastTotalTime != 0) {
-        usage = 100.0f * (1.0f - (float)(idleTime - lastIdleTime) / (totalTime - lastTotalTime));
+    // On first call, we don't have previous readings
+    if (lastTotalTime == 0) {
+        lastIdleTime = idleTime;
+        lastTotalTime = totalTime;
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        return getCPUUsage(); // re-run after 100ms delay
     }
+
+    unsigned long long deltaTotal = totalTime - lastTotalTime;
+    unsigned long long deltaIdle = idleTime - lastIdleTime;
 
     lastIdleTime = idleTime;
     lastTotalTime = totalTime;
 
-    return usage;
+    if (deltaTotal == 0) return 0.0f;
+    return 100.0f * (1.0f - (float) deltaIdle / deltaTotal);
 }

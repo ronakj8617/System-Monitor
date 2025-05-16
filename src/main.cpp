@@ -13,7 +13,7 @@ int main() {
         float cpuUsage = cpu.getCPUUsage();
         float memUsage = getMemoryUsagePercent();
 
-        system("clear"); // or std::cout << "\033[2J\033[1;1H";
+        system("clear");
         std::cout << "[CPU]    " << cpuUsage << "%    [Memory]  " << memUsage << "%\n";
         std::this_thread::sleep_for(std::chrono::seconds(1));
     }

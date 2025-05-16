@@ -7,6 +7,7 @@
 class CPUMonitor {
 public:
     float getCPUUsage();
+
 private:
     unsigned long long lastIdleTime = 0;
     unsigned long long lastTotalTime = 0;
